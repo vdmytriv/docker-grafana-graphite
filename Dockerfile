@@ -46,7 +46,7 @@ RUN     git clone https://github.com/etsy/statsd.git /src/statsd                
 # Install Grafana
 RUN     mkdir /src/grafana                                                                                    &&\
   mkdir /opt/grafana                                                                                    &&\
-  wget https://dl.grafana.com/oss/release/grafana-6.4.4.linux-amd64.tar.gz -O /src/grafana/grafana.tar.gz &&\
+  wget https://dl.grafana.com/oss/release/grafana-7.4.1.linux-amd64.tar.gz -O /src/grafana/grafana.tar.gz &&\
   tar -xzf /src/grafana/grafana.tar.gz -C /opt/grafana --strip-components=1                             &&\
   rm /src/grafana/grafana.tar.gz
 
@@ -91,7 +91,7 @@ ADD     ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 # ---------------- #
 
 # Grafana
-EXPOSE  80
+EXPOSE  1080
 
 # Graphite
 EXPOSE 2003
